@@ -1,6 +1,3 @@
-import jdk.internal.jshell.tool.resources.l10n;
-import sun.rmi.server.UnicastRef;
-
 public class NBody {
     public static String _background = "images/starfield.jpg";
 
