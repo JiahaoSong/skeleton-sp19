@@ -37,7 +37,6 @@ public class ArrayDeque<Item>
     /** Copy constructor */
     public ArrayDeque(ArrayDeque<Item> other)
     {
-        // TODO
         size_ = other.size();
         items_ = (Item[]) new Object[other.items_.length];
         next_first_ = other.next_first_;
@@ -88,7 +87,6 @@ public class ArrayDeque<Item>
      * Resize the array if it is already full */
     public void addFirst(Item item)
     {
-        // TODO: resizing
         items_[next_first_] = item;
         size_++;
         next_first_ = circularStep(next_first_, -1);
@@ -103,7 +101,6 @@ public class ArrayDeque<Item>
      * Resize the array if it is already full */
     public void addLast(Item item)
     {
-        // TODO: resizing
         items_[next_last_] = item;
         size_++;
         next_last_ = circularStep(next_last_, 1);
@@ -117,7 +114,6 @@ public class ArrayDeque<Item>
     /** Removes and returns the first item in the array */
     public Item removeFirst()
     {
-        // TODO: resizing
         int first_pos = circularStep(next_first_, 1);
         Item first_item = items_[first_pos];
         items_[first_pos] = null;
@@ -135,14 +131,13 @@ public class ArrayDeque<Item>
     /** Removes and returns the last item in the array */
     public Item removeLast()
     {
-        // TODO: resizing
         int last_pos = circularStep(next_last_, -1);
         Item last_item = items_[last_pos];
         items_[last_pos] = null;
         next_last_ = last_pos;
         size_--;
 
-        if (size_ / items_.length < USAGE_FACTOR_THRESH)
+        if ((double) size_ / items_.length < USAGE_FACTOR_THRESH)
         {
             resize(size_);
         }
