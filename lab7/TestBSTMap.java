@@ -67,6 +67,8 @@ public class TestBSTMap {
         for (int i = 0; i < 455; i++)
             b.put("hi" + i, 1);
         assertEquals(456, b.size());
+
+//        b.printInOrder();
     }
 
     //assumes get/containskey work
