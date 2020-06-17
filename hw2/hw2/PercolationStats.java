@@ -1,5 +1,8 @@
 package hw2;
 
-public class PercolationStats {
+import edu.princeton.cs.algs4.StdRandom;
+import edu.princeton.cs.algs4.StdStats;
 
+public class PercolationStats {
+    
 }
